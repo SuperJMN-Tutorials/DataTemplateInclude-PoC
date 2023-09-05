@@ -31,6 +31,7 @@ public class DataTemplateInclude : AvaloniaObject, IDataTemplate
             .BindTo(this, x => x.DataTemplates);
     }
 
+    // ReSharper disable once UnusedAutoPropertyAccessor.Local
     public Maybe<DataTemplates> DataTemplates { get; private set; }
 
     public Uri? Source
