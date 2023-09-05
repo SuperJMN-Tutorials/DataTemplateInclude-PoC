@@ -20,12 +20,12 @@ public class DataTemplateInclude : AvaloniaObject, IDataTemplate
         this
             .WhenAnyValue(x => x.Source)
             .Select(Maybe.From)
-            .Select(m =>
+            .Select(maybeUri =>
             {
-                return m.Map(r =>
+                return maybeUri.Map(uri =>
                 {
                     var baseUri = serviceProvider.GetContextBaseUri();
-                    return (DataTemplates)AvaloniaXamlLoader.Load(serviceProvider, r, baseUri);
+                    return (DataTemplates)AvaloniaXamlLoader.Load(serviceProvider, uri!, baseUri);
                 });
             })
             .BindTo(this, x => x.DataTemplates);
