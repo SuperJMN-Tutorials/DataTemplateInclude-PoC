@@ -1,0 +1,9 @@
+﻿<DataTemplates xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Sample.ViewModels">
+    
+    <DataTemplate DataType="viewModels:MainViewModel">
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </DataTemplate>
+
+</DataTemplates>
